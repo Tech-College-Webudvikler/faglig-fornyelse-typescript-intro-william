@@ -8,7 +8,14 @@ function App() {
   return (
     <div>
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+      <Modal
+        width={200}
+        height={200}
+        font="Times New Roman"
+        bg="#232323"
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      >
         <div>modal open</div>
       </Modal>
     </div>

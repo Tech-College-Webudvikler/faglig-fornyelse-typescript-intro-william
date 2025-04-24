@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
-export const ModalStyled = styled.div`
+interface ModalStyledProps {
+  bg: string;
+  font: string;
+}
+
+export const ModalStyled = styled.div<ModalStyledProps>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.bg};
+  font-family: ${(props) => props.font};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,12 +33,18 @@ export const ModalStyled = styled.div`
   }
 `;
 
-export const ModalDiv = styled.div`
+interface MdalDivInterface {
+  width: number;
+  height: number;
+}
+
+export const ModalDiv = styled.div<MdalDivInterface>`
+  width: ${(props) => `${props.width}px`};
+  height: ${(props) => `${props.height}px`};
+
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 100%;
   text-align: center;
 `;
